@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#123d39" />
+    <meta name="description" content="Dermavision — plataforma demonstrativa para acompanhamento dermatológico longitudinal." />
+    <title>DermaVision | Acompanhamento dermatológico</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="auth-view" class="auth-view">
+      <div class="auth-art">
+        <div class="auth-brand"><span class="brand-mark">D</span><span>dermavision</span></div>
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-copy">
+          <span class="eyebrow light-eyebrow">CUIDADO EM CADA ETAPA</span>
+          <h1>Uma visão mais clara da evolução da pele.</h1>
+          <p>Histórico clínico, imagens e acompanhamento em um só lugar para apoiar cada consulta.</p>
+        </div>
+        <div class="auth-art-note"><span class="note-dot"></span> Acompanhamento longitudinal, com o profissional no centro.</div>
+      </div>
+      <div class="auth-panel">
+        <div class="auth-card">
+          <div class="auth-mobile-brand"><span class="brand-mark">D</span><span>dermavision</span></div>
+          <span class="eyebrow">DERMATOLOGIA ASSISTIDA BRASIL</span>
+          <h2>Boas-vindas</h2>
+          <p class="muted">Acesse a demonstração da DermaVision.</p>
+          <form id="login-form" class="login-form">
+            <label for="login-email">E-mail profissional</label>
+            <div class="field-icon-wrap"><span class="field-icon">✉</span><input id="login-email" name="email" type="email" value="dra.mariana@dermavision.demo" autocomplete="username" required /></div>
+            <label for="login-password">Senha de demonstração</label>
+            <div class="field-icon-wrap"><span class="field-icon">⌑</span><input id="login-password" name="password" type="password" value="demo2026" autocomplete="current-password" required /></div>
+            <button class="button button-primary login-button" type="submit">Entrar na demonstração <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="login-hint"><span class="hint-icon">i</span><span>Use o acesso demonstrativo. Nenhum dado é enviado para um servidor.</span></div>
+          <p class="auth-legal">Ao entrar, você acessa uma demonstração local com informações fictícias. Não utilize dados reais de pacientes.</p>
+        </div>
+        <div class="auth-footer"><span>DERMAVISION CLÍNICA DERMATOLÓGICA</span><span>Versão demonstrativa · 2026</span></div>
+      </div>
+    </div>
+
+    <div id="app-view" class="app-view hidden">
+      <aside class="sidebar" id="sidebar">
+        <a class="sidebar-brand" href="#dashboard" data-route="dashboard" aria-label="DermaVision — início"><span class="brand-mark">D</span><span class="brand-word">dermavision<small>CLÍNICA DERMATOLÓGICA</small></span></a>
+        <div class="clinic-switch"><span class="clinic-avatar">DV</span><span class="clinic-meta"><b>DermaVision</b><small>Unidade principal</small></span><span class="chevron">⌄</span></div>
+        <span class="nav-label">MENU PRINCIPAL</span>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <button class="nav-link active" data-route="dashboard"><span class="nav-icon" data-icon="grid"></span><span>Visão geral</span></button>
+          <button class="nav-link" data-route="patients"><span class="nav-icon" data-icon="users"></span><span>Pacientes</span><span id="nav-patient-count" class="nav-count"></span></button>
+          <button class="nav-link" data-route="agenda"><span class="nav-icon" data-icon="calendar"></span><span>Agenda</span></button>
+          <button class="nav-link" data-route="lesions"><span class="nav-icon" data-icon="target"></span><span>Lesões e mapa</span></button>
+          <button class="nav-link" data-route="reports"><span class="nav-icon" data-icon="chart"></span><span>Relatórios</span></button>
+        </nav>
+        <span class="nav-label workspace-label">ESPAÇO DE TRABALHO</span>
+        <nav class="main-nav" aria-label="Configurações">
+          <button class="nav-link" data-route="settings"><span class="nav-icon" data-icon="settings"></span><span>Configurações</span></button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-support"><div class="support-icon">?</div><div><b>Precisa de ajuda?</b><small>Consulte o guia rápido</small></div><span>↗</span></div>
+        <div class="sidebar-profile"><div class="profile-avatar">MM</div><div class="profile-info"><b>Dra. Mariana Martins</b><small>Dermatologista</small></div><button class="profile-more" id="profile-menu" aria-label="Abrir opções do perfil">···</button><div class="profile-popover hidden" id="profile-popover"><button data-action="profile">Meu perfil</button><button data-action="logout">Sair da demonstração</button></div></div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button id="mobile-menu" class="mobile-menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+          <div class="breadcrumbs"><span>Clínica</span><span class="crumb-sep">/</span><b id="breadcrumb-current">Visão geral</b></div>
+          <div class="topbar-actions">
+            <div class="demo-status"><span class="demo-status-dot"></span> Ambiente de demonstração</div>
+            <button class="icon-button help-button" aria-label="Ajuda" data-action="help"><span data-icon="help"></span></button>
+            <button class="icon-button notification-button" aria-label="Notificações" data-action="notifications"><span data-icon="bell"></span><i></i></button>
+            <div class="topbar-avatar">MM</div>
+          </div>
+        </header>
+        <div class="demo-banner"><span class="banner-symbol">!</span><span><b>Ambiente de demonstração.</b> Use somente os dados fictícios incluídos. Informações ficam salvas localmente neste navegador.</span><button aria-label="Fechar aviso" id="dismiss-banner">×</button></div>
+        <section id="page-content" class="page-content" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="modal-root"></div>
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

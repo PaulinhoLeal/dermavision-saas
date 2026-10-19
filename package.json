@@ -1,0 +1,14 @@
+{
+  "name": "dermavision-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Demonstração local do acompanhamento dermatológico longitudinal DermaVision",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node serve.mjs",
+    "test": "node --test"
+  }
+}

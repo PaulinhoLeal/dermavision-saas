@@ -1,0 +1,14 @@
+# Dependências e saídas locais
+node_modules/
+coverage/
+test-results/
+*.log
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
